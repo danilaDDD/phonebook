@@ -3,13 +3,13 @@ import java.util.*;
 public class PhoneBook {
     private Map<String, Set<Integer>> nameToPhones = new HashMap<>();
 
-    public void add(String name, int phone){
-       Set<Integer> phones = find(name);
+    public void addNumber(String name, int phone){
+       Set<Integer> phones = findByName(name);
        phones.add(phone);
        nameToPhones.put(name, phones);
     }
 
-    public Set<Integer> find(String name){
+    public Set<Integer> findByName(String name){
         Set<Integer> phones = nameToPhones.get(name);
         if(phones == null)
             return new TreeSet<>();
@@ -17,10 +17,11 @@ public class PhoneBook {
         return phones;
     }
     // get entries order in descending order
-    public List<Map.Entry<String, Set<Integer>>> getPhoneBook(){
-        List<Map.Entry<String, Set<Integer>>> entryList = new ArrayList<>(nameToPhones.entrySet());
-        entryList.sort(new EntrySetComparator());
-        return entryList;
+    public Set<Map.Entry<String, Set<Integer>>> getPhoneBook(){
+        Set<Map.Entry<String, Set<Integer>>> entrySet = new TreeSet<>(new EntrySetComparator());
+        entrySet.addAll(nameToPhones.entrySet());
+
+        return entrySet;
     }
 
     private static class EntrySetComparator implements Comparator<Map.Entry<String, Set<Integer>>>{

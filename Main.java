@@ -10,20 +10,20 @@ public class Main {
         String name3 = "Peter";
         String name4 = "Igor";
 
-        phoneBook.add(name1, 6666);
-        phoneBook.add(name1, 6666);
+        phoneBook.addNumber(name1, 6666);
+        phoneBook.addNumber(name1, 6666);
 
-        phoneBook.add(name2, 6666);
-        phoneBook.add(name2, 9999);
+        phoneBook.addNumber(name2, 6666);
+        phoneBook.addNumber(name2, 9999);
 
-        phoneBook.add(name3, 6666);
-        phoneBook.add(name3, 9999);
-        phoneBook.add(name3, 5555);
+        phoneBook.addNumber(name3, 6666);
+        phoneBook.addNumber(name3, 9999);
+        phoneBook.addNumber(name3, 5555);
 
-        System.out.printf("find by name %s: %s\n", name1, phoneBook.find(name1));
-        System.out.printf("find by name %s: %s\n", name2, phoneBook.find(name2));
-        System.out.printf("find by name %s: %s\n", name3, phoneBook.find(name3));
-        System.out.printf("find by name %s: %s\n", name4, phoneBook.find(name4));
+        System.out.printf("find by name %s: %s\n", name1, phoneBook.findByName(name1));
+        System.out.printf("find by name %s: %s\n", name2, phoneBook.findByName(name2));
+        System.out.printf("find by name %s: %s\n", name3, phoneBook.findByName(name3));
+        System.out.printf("find by name %s: %s\n", name4, phoneBook.findByName(name4));
         System.out.printf("get all phone book %s", phoneBook.getPhoneBook());
 
 
