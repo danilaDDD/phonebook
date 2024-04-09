@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class PhoneBook {
-    private Map<String, Set<Integer>> nameToPhones = new HashMap<>();
+    private  final Map<String, Set<Integer>> nameToPhones = new HashMap<>();
 
     public void addNumber(String name, int phone){
        Set<Integer> phones = findByName(name);
